@@ -46,5 +46,5 @@ Once the code changes for the single assigned `task_id` are complete:
 3. Present a concise summary containing:
    - **Assigned Task:** `task_id` & `title`
    - **Modified Files:** Exact list of changed files compared against `scope_files`
-   - **How to Verify:** Step-by-step instructions to test `acceptance_criteria` in the browser
+   - **How to Verify:** Step-by-step instructions to preview `03-src/index.html` and test `acceptance_criteria`
 4. **Stop and wait** for the human user to inspect the diff and commit the changes.
