@@ -1,0 +1,5 @@
+task_id,phase,title,scope_files,status,acceptance_criteria
+TASK-01,Setup,Scaffold responsive UI layout and form controls,03-src/index.html;03-src/style.css,DONE,Browser renders clean navbar input form and card grid without layout bugs
+TASK-02,Core,Implement bookmark addition and localStorage persistence,03-src/app.js,TODO,Submitting the form saves the item to localStorage and displays it in the list
+TASK-03,Feature,Implement category tag filtering,03-src/app.js;03-src/style.css,TODO,Clicking tag pills filters displayed cards dynamically without full page refresh
+TASK-04,Audit,Add input validation and URL sanity checks,03-src/app.js,TODO,Invalid URLs trigger an inline error toast and prevent empty submissions

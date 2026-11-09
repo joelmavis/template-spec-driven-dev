@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevMarks — Minimal Local Bookmark Manager</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">⌘</span>
+        <div>
+          <h1 class="brand-title">DevMarks</h1>
+          <p class="brand-subtitle">Local-First Developer Bookmark Manager · SDD Sample</p>
+        </div>
+      </div>
+      <div class="navbar-stats">
+        <span class="stat-pill">
+          <span class="stat-label">Saved</span>
+          <strong id="total-count" class="stat-value">0</strong>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Workspace Container -->
+  <main class="container main-content">
+    <!-- Toast Notification Container (Used by TASK-04) -->
+    <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Add Bookmark Section -->
+    <section class="card form-section" aria-labelledby="form-heading">
+      <div class="section-header">
+        <h2 id="form-heading" class="section-title">Add Developer Bookmark</h2>
+        <span class="section-hint">Stored locally in your browser via <code>localStorage</code></span>
+      </div>
+
+      <form id="bookmark-form" class="bookmark-form" novalidate>
+        <div class="form-group">
+          <label for="bookmark-title" class="form-label">Resource Title</label>
+          <input
+            type="text"
+            id="bookmark-title"
+            name="title"
+            class="form-input"
+            placeholder="e.g., MDN Web Docs — URL API"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="bookmark-url" class="form-label">Resource URL</label>
+          <input
+            type="url"
+            id="bookmark-url"
+            name="url"
+            class="form-input"
+            placeholder="https://developer.mozilla.org/en-US/docs/Web/API/URL"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="form-group form-group-category">
+          <label for="bookmark-category" class="form-label">Category</label>
+          <select id="bookmark-category" name="category" class="form-select">
+            <option value="Docs">Docs</option>
+            <option value="Tools">Tools</option>
+            <option value="Articles">Articles</option>
+            <option value="GitHub">GitHub</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn btn-primary">
+            + Save Bookmark
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Filter & Toolbar Section -->
+    <section class="toolbar-section" aria-label="Category Filters">
+      <div class="toolbar-header">
+        <h2 class="section-title">Saved Bookmarks</h2>
+        <div id="filter-bar" class="filter-bar" role="group" aria-label="Filter bookmarks by category">
+          <button type="button" class="filter-pill active" data-category="All">All</button>
+          <button type="button" class="filter-pill" data-category="Docs">Docs</button>
+          <button type="button" class="filter-pill" data-category="Tools">Tools</button>
+          <button type="button" class="filter-pill" data-category="Articles">Articles</button>
+          <button type="button" class="filter-pill" data-category="GitHub">GitHub</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bookmark Cards Grid -->
+    <section aria-label="Bookmark List">
+      <div id="bookmark-grid" class="bookmark-grid">
+        <div class="empty-state" id="empty-state">
+          <p class="empty-title">No bookmarks saved yet</p>
+          <p class="empty-description">
+            Use the form above to add your first developer link. Execute <code>TASK-02</code> to activate persistence and dynamic rendering.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Built with <strong>Spec-Driven Development</strong></span>
+      <span>Workspace Status: <code>TASK-01 DONE</code></span>
+    </div>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
